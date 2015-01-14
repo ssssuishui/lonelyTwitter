@@ -25,7 +25,7 @@ public abstract class LonelyTweetModel {
 		this.text = text;
 	}
 	
-	public abstract Date getTimestamp();
+	public abstract Date getTimestamp();//declares a method 
 	
 	public void setTimestamp(Date timestamp) {
 		this.timestamp = timestamp;

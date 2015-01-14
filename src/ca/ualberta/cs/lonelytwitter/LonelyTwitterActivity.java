@@ -18,9 +18,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-public class LonelyTwitterActivity extends Activity {
+public class LonelyTwitterActivity extends Activity { //Activity is a class by android, for google to implement
 
-	private static final String FILENAME = "file.sav";
+	private static final String FILENAME = "file.sav";//static-class specific, final-cannot change, 
+														//capitalize things not changing
 	private EditText bodyText;
 	private ListView oldTweetsList;
 	
@@ -34,7 +35,7 @@ public class LonelyTwitterActivity extends Activity {
 		Button saveButton = (Button) findViewById(R.id.save);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 
-		saveButton.setOnClickListener(new View.OnClickListener() {
+		saveButton.setOnClickListener(new View.OnClickListener() { //new... anonymous class below
 
 			public void onClick(View v) {
 				setResult(RESULT_OK);
@@ -48,6 +49,23 @@ public class LonelyTwitterActivity extends Activity {
 
 	@Override
 	protected void onStart() {
+		
+		User u =new Author("Joe");
+		
+		u.getName();
+		
+		try{
+			u.setName("Othername");
+		}catch (IOException e) {
+			  
+		}
+		
+		ArrayList <User> users = new ArrayList<User>();
+		ArrayList <UserLike> userlikes =new ArrayList <UserLike>();
+		ArrayList <Object> objects;
+		
+		
+		
 		// TODO Auto-generated method stub
 		super.onStart();
 		String[] tweets = loadFromFile();
